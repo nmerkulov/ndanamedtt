@@ -16,6 +16,7 @@ Inmemory storage for portDomainService (or sql implementation using sqlx + squir
 Wire everything up in main. I follow dependency injection approach without any service-locators or anything like that
 Tracing. It is extremely important in microservice world
 Authenticating between services
+Metrics. Metrics are crucial in terms of using your software.
 And service-discovery might be a thing
 
 I decided to stop at 2 hours state as it is.

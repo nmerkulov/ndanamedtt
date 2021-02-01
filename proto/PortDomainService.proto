@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package portDomain;
+
+service PortDomain {
+  rpc RecordPort(stream Port) returns (RecordPortStats);
+  rpc FindPort(FindPortParams) returns (Port);
+}
+
+
+message FindPortParams {
+  int64 id = 1;
+}
+
+message Port {
+  string name = 1;
+  string city = 2;
+  string country = 3;
+  repeated string alias = 4;
+  repeated string regions = 5;
+  repeated double coordinates = 6;
+  string province = 7;
+  string timezone = 8;
+  repeated string unlocs = 9;
+  string code = 10;
+}
+
+message RecordPortStats {
+  int64 Total = 1;
+  int64 Accepted =2;
+  int64 Rejected = 3;
+}

@@ -1,0 +1,121 @@
+{
+  "definitions": [
+    {
+      "protopath": "PortDomainService.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "FindPortParams",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "int64"
+              }
+            ]
+          },
+          {
+            "name": "Port",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "city",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "country",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "alias",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "regions",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "coordinates",
+                "type": "double",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "province",
+                "type": "string"
+              },
+              {
+                "id": 8,
+                "name": "timezone",
+                "type": "string"
+              },
+              {
+                "id": 9,
+                "name": "unlocs",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 10,
+                "name": "code",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "RecordPortStats",
+            "fields": [
+              {
+                "id": 1,
+                "name": "Total",
+                "type": "int64"
+              },
+              {
+                "id": 2,
+                "name": "Accepted",
+                "type": "int64"
+              },
+              {
+                "id": 3,
+                "name": "Rejected",
+                "type": "int64"
+              }
+            ]
+          }
+        ],
+        "services": [
+          {
+            "name": "PortDomain",
+            "rpcs": [
+              {
+                "name": "RecordPort",
+                "in_type": "Port",
+                "out_type": "RecordPortStats",
+                "in_streamed": true
+              },
+              {
+                "name": "FindPort",
+                "in_type": "FindPortParams",
+                "out_type": "Port"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "portDomain"
+        }
+      }
+    }
+  ]
+}
